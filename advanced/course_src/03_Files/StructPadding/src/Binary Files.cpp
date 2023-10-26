@@ -13,6 +13,7 @@ using namespace std;
 #pragma pack(push, 1)
 
 struct Person {
+    // cannot use string because only pointer in stack, actual data in heap
 	char name[50];
 	int age;
 	double weight;
@@ -23,7 +24,6 @@ struct Person {
 int main() {
 
 	cout << sizeof(Person) << endl;
-
 
 
 
