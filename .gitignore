@@ -78,6 +78,4 @@ doc/source/python_api/
 doc/source/python_tutorials/
 doc/source/files/
 
-cmake-build-debug
-cmake-build-release
-.DS_Store
+!cuda/.vscode

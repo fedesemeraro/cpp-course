@@ -17,7 +17,7 @@ int main() {
 
 	auto texts = { "one", "two", "three" };
 
-	for (auto text : texts)
+	for (auto &text : texts)
 	{
 		cout << text << endl;
 	}

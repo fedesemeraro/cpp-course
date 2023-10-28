@@ -36,7 +36,7 @@ int main() {
 	for(map<string, vector<int> >::iterator it = scores.begin(); it!= scores.end(); it++)
 	{
 		string name = it->first;
-		vector<int> scoreList = it->second;
+		vector<int> &scoreList = it->second;
 
 		cout << name << ": " << flush;
 
