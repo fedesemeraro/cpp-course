@@ -3,10 +3,10 @@
 //
 
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <list>
-#include <map>
+//#include <fstream>
+//#include <string>
+//#include <list>
+//#include <map>
 
 using namespace std;
 
@@ -50,6 +50,78 @@ public:
 
     bool operator<(const Test &other) const{
         return this->data[0] < other.data[0];
+    }
+};
+
+template<class T>
+class Ring {
+private:
+    T *data;
+    int len;
+    int pos;
+
+public:
+    class iterator;
+
+public:
+    Ring(int len){
+        this->len = len;
+        this->pos = 0;
+        data = new T[len];
+    }
+
+    ~Ring(){
+        delete [] data;
+    }
+
+    void add(T value){
+        data[pos++] = value;
+        if (len == pos){
+            pos = 0;
+        }
+    }
+
+    T &get(int i){
+        return data[i];
+    }
+
+    int size() const{
+        return this->len;
+    }
+
+    iterator begin(){
+        return iterator(0, this);
+    }
+    iterator end(){
+        return iterator(len, this);
+    }
+};
+
+template<class T>
+class Ring<T>::iterator{
+private:
+    int pos;
+    Ring *ring;
+public:
+    iterator(int pos, Ring *ring): pos(pos), ring(ring){}
+
+    iterator operator++(int){ // postfix
+        iterator old = *this;
+        ++(*this);
+        return old;
+    }
+    iterator operator++(){ // prefix
+        ++pos;
+        return *this;
+    }
+    bool operator==(const iterator &other) const{
+        return this->pos == other.pos;
+    }
+    bool operator!=(const iterator &other) const{
+        return !(*this == other);
+    }
+    T& operator*() {
+        return ring->get(pos);
     }
 };
 
@@ -103,8 +175,36 @@ int main(){
 //    int arr2[] = {2, 2, 2};
 //    mm.insert(make_pair(Test(3, arr2), 1));
 
-    Test *pTest = new Test(10);
-    pTest->print();
+
+//    Test *pTest = new Test(10);
+//    pTest->print();
+
+//    Ring<string> textring(3);
+//    textring.add("one");
+//    textring.add("two");
+//    textring.add("three");
+//    textring.add("four");
+//    for (int i = 0; i < textring.size(); i++) {
+//        cout << textring.get(i) << endl;
+//    }
+//    for (Ring<string>::iterator it = textring.begin(); it != textring.end(); it++){
+//        cout << *it << " " << flush;
+//    }
+//    cout << endl;
+//    for (auto &text: textring){
+//        cout << text << " " << flush;
+//    }
+
+//    struct {
+//        string text;
+//        int id;
+//    } r1 = { "Hello", 7 }, r2 = { "Hi", 9 };
+
+
+    int a = 10;
+    int b = 11;
+    function<int(int, int)> add = [&](int m, int n){ return a + b + m + n; };
+    cout << add(3, 4) << endl;
 
     return 0;
 }
