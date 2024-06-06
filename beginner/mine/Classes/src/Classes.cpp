@@ -53,28 +53,29 @@ int main(){
 //    cout << *p_value << endl;
 //    manipulate_pointer(&value);
 //    cout << value << endl;
+//    cout << *p_value << endl;
 
     // pointers in arrays
-//    string a[] = {"one", "two", "three"};
-//    for (int i = 0; i < sizeof(a) / sizeof(string); i++){
-//        cout << a[i] << " " << flush;
-//    }
-//    cout << endl;
-//    string *p_a = a;
-//    for (int i = 0; i < sizeof(a) / sizeof(string); i++, p_a++){
-//        cout << *p_a << " " << flush;
-//    }
-//    cout << endl;
-//    string *p_a2 = &a[0];
-//    string *p_a3 = &a[2];
-//    while(true){
-//        cout << *p_a2 << " " << flush;
-//        if (p_a2 == p_a3){
-//            break;
-//        }
-//        p_a2++;
-//    }
-//    cout << endl;
+    // string a[] = {"one", "two", "three"};
+    // for (int i = 0; i < sizeof(a) / sizeof(string); i++){
+    //     cout << a[i] << " " << flush;
+    // }
+    // cout << endl;
+    // string *p_a = a;
+    // for (int i = 0; i < sizeof(a) / sizeof(string); i++, p_a++){
+    //     cout << *p_a << " " << flush;
+    // }
+    // cout << endl;
+    // string *p_a2 = &a[0];
+    // string *p_a3 = &a[sizeof(a) / sizeof(string) - 1];
+    // while(true){
+    //     cout << *p_a2 << " " << flush;
+    //     if (p_a2 == p_a3){
+    //         break;
+    //     }
+    //     p_a2++;
+    // }
+    // cout << endl;
 
     // pointer arithmetic
 //    const int NSTRINGS = 5;
@@ -90,10 +91,10 @@ int main(){
 //    char text[] = "ciao";
 //    int len = sizeof(text) - 1;
 //    char out[len + 1];
-//
+
 //    char *pText = &text[0];
 //    char *pOut = &out[len - 1];
-//    while(*pText != 0){
+//    while(*pText != 0){  // null terminator is a character with a value of 0
 //        *pOut = *pText;
 //        pText++;
 //        pOut--;
@@ -102,13 +103,13 @@ int main(){
 //    cout << out << endl;
 
     // references (basically an alias, simpler than pointers but less powerful)
-//    double value1 = 9.;
+//    double value = 9.;
 //    double &value2 = value;
 //    manipulate_reference(value);
 //    const int value1 = 10;
 //    const int *pValue1 = &value1;
-//    int value2 = 11;
-//    pValue1 = &value2;
+//    int value3 = 11;
+// //    pValue1 = &value2;
 //    value2 = 12;  // but cannot do *pValue1 = 12;
 //    cout << *pValue1 << endl;
 //    const int * const pValue2 = &value1;  // cannot reassign the pointer
@@ -154,12 +155,15 @@ int main(){
 //    cat10.speak();
 
     // inheritance: NB constructors are not inherited, so cannot run eg animals::Soriano cat11(true, "Jen");
-    animals::Soriano cat11;
-    cat11.setName("Jen");
-    cat11.speak();
+    // animals::Soriano cat11;
+    // cat11.setName("Jen");
+    // cat11.speak();
 
     // static keyword for an instance var or function
     // virtual keyword for a class function
+
+    // different from python
+    // cout << -16 % 7 << endl;
 
     return 0;
 }

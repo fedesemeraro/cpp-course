@@ -3,18 +3,20 @@
 //
 
 #include <iostream>
-//#include <fstream>
-//#include <string>
-//#include <list>
-//#include <map>
+#include <fstream>
+#include <string>
+#include <list>
+#include <map>
 
 using namespace std;
+
 
 struct Person {
     char name[50];
     int age;
     double weight;
 };
+
 
 class Test{
 private:
@@ -52,6 +54,7 @@ public:
         return this->data[0] < other.data[0];
     }
 };
+
 
 template<class T>
 class Ring {
@@ -97,6 +100,7 @@ public:
     }
 };
 
+
 template<class T>
 class Ring<T>::iterator{
 private:
@@ -125,13 +129,14 @@ public:
     }
 };
 
+
 int main(){
 
 //    Person p1 = {"Federico", 29, 70};
-//
+
 //    ofstream outputFile;
 //    outputFile.open("test.bin", ios::binary);
-//
+
 //    if (outputFile.is_open()){
 //        outputFile.write(reinterpret_cast<char *>(&p1), sizeof (p1));
 //        outputFile.close();
@@ -150,11 +155,11 @@ int main(){
 //    vector<vector<string>> strings2(4, vector<string>(4, ""));
 
 
-//    list<int> l = {1, 2, 3};
+//    list<int> l = {1, 2, 3, 5};
 //    for(auto it = l.begin(); it != l.end(); it++){
 //        if (*it == 3){
 //            it = l.erase(it);
-////            l.insert(it, 4);  // inserts just before 3
+// //            l.insert(it, 4);  // inserts just before 3
 //        }
 //    }
 //    for(auto it = l.begin(); it != l.end(); it++){
@@ -169,15 +174,25 @@ int main(){
 //    }
 
 
-//    multimap<Test, int> mm;
+//    multimap<Test, int> mm;  // allows multiple entries to have the same key
 //    int arr1[] = {1, 1, 1};
 //    mm.insert(make_pair(Test(3, arr1), 1));
 //    int arr2[] = {2, 2, 2};
 //    mm.insert(make_pair(Test(3, arr2), 1));
 
+//     std::multimap<int, std::string> userMultimap;
+//     userMultimap.insert({1, "Alice"});
+//     userMultimap.insert({2, "Bob"});
+//     userMultimap.insert({1, "Carol"}); // Adds another entry for key 1
+//     auto range = userMultimap.equal_range(1);
+//     for (auto it = range.first; it != range.second; ++it) {
+//         std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
+//     }
+
 
 //    Test *pTest = new Test(10);
 //    pTest->print();
+
 
 //    Ring<string> textring(3);
 //    textring.add("one");
@@ -194,6 +209,7 @@ int main(){
 //    for (auto &text: textring){
 //        cout << text << " " << flush;
 //    }
+
 
 //    struct {
 //        string text;

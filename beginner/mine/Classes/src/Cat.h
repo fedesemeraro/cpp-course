@@ -24,7 +24,9 @@ namespace cats {
             this->name = name;
         };
 
-        Cat(const Cat &other) : happy(other.happy), name(other.name) { cout << "Cat created by copying" << endl; };
+        Cat(const Cat &other) : happy(other.happy), name(other.name) { 
+            cout << "Cat created by copying" << endl; 
+        };
 
         ~Cat();
 
@@ -34,9 +36,6 @@ namespace cats {
 
         void speak() { cout << this->name << endl; };
     };
-
-
-
 }
 
 #endif //ADVANCED_CPLUSPLUS_CAT_H

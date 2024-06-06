@@ -1,0 +1,5 @@
+{
+    "cmake.cmakePath": "/opt/anaconda3/envs/cmake/bin/cmake",
+    // "cmake.sourceDirectory": "/Users/apple/Developer/cpp-course/beginner/mine/Classes",
+    "cmake.sourceDirectory": "/Users/apple/Developer/cpp-course/advanced/mine/exercises",
+}

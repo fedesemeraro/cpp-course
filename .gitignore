@@ -35,7 +35,7 @@ CMakeLists.txt.user
 # For PuMA development with different IDEs (CLion, qtcreator)
 .idea
 .vs
-.vscode
+# .vscode
 debug/*
 release/*
 .DS_Store
@@ -79,3 +79,5 @@ doc/source/python_tutorials/
 doc/source/files/
 
 !cuda/.vscode
+
+*.bin
