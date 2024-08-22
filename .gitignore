@@ -81,3 +81,4 @@ doc/source/files/
 !cuda/.vscode
 
 *.bin
+out*

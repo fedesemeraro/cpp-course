@@ -5,6 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "gl_app",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/shaders/out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [{
+                "name": "DYLD_LIBRARY_PATH",
+                "value": "${workspaceFolder}/shaders/dependencies/lib"
+            }],
+            "internalConsoleOptions": "openOnSessionStart",
+            "MIMode": "lldb",
+            "preLaunchTask": "gl_build"
+        },
+        {
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",

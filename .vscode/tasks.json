@@ -2,6 +2,44 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "type": "cppbuild",
+            "label": "gl_build",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-std=c++17",
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-g",
+                "-I${workspaceFolder}/shaders/dependencies/include",
+                "-L${workspaceFolder}/shaders/dependencies/lib",
+                "${workspaceFolder}/shaders/dependencies/lib/libglfw.3.dylib",
+                "${workspaceFolder}/shaders/*.cpp",
+                "${workspaceFolder}/shaders/glad.c",
+                "-o",
+                "${workspaceFolder}/shaders/out",
+                "-framework",
+                "OpenGL",
+                "-framework",
+                "Cocoa",
+                "-framework",
+                "IOKit",
+                "-framework",
+                "CoreVideo",
+                "-framework",
+                "CoreFoundation",
+                "-Wno-deprecated"
+            ],
+            "options": {
+             "cwd": "${fileDirname}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+             "kind": "build",
+             "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/clang++"
+        },
+        {
             "label": "build",
             "type": "shell",
             "command": "/opt/anaconda3/envs/cmake/bin/cmake",
@@ -15,6 +53,6 @@
             },
             "problemMatcher": ["$gcc"],
             "detail": "Generated task by CMake Tools"
-        }
+        },
     ]
 }
